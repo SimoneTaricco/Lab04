@@ -123,7 +123,6 @@ public class CorsoDAO {
 			
 
 		} catch (SQLException e) {
-			// e.printStackTrace();
 			throw new RuntimeException("Errore Db", e);
 		}
 	}
