@@ -11,6 +11,7 @@ public class TestDB {
 		CorsoDAO cdao = new CorsoDAO();
 		cdao.getTuttiICorsi();
 		
+		//cdao.getCorso(01NATPG);
 		
 	}
 

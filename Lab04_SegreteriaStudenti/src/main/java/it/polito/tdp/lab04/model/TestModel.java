@@ -6,6 +6,8 @@ public class TestModel {
 
 		Model model = new Model();
 		
+		//System.out.println(model.getCodiciCorsi());
+		
 		/*
 		 * 	Write here your test model
 		 */
