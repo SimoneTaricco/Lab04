@@ -41,55 +41,10 @@ public class CorsoDAO {
 			
 
 		} catch (SQLException e) {
-			// e.printStackTrace();
 			throw new RuntimeException("Errore Db", e);
 		}
 	}
 	
-	
-	/*
-	 * Dato un codice insegnamento, ottengo il corso
-	 */
-	/*public Corso getCorso(Corso corso) {
-		
-		final String sql = "SELECT * FROM corso WHERE codins = '+ corso +'" ;
-		
-		Corso res = new Corso();
-
-		List<Corso> corsi = new LinkedList<Corso>();
-
-		try {
-			Connection conn = ConnectDB.getConnection();
-			PreparedStatement st = conn.prepareStatement(sql);
-
-			ResultSet rs = st.executeQuery();
-
-			while (rs.next()) {
-
-				String codins = rs.getString("codins");
-				int numeroCrediti = rs.getInt("crediti");
-				String nome = rs.getString("nome");
-				int periodoDidattico = rs.getInt("pd");
-
-				System.out.println(codins + " " + numeroCrediti + " " + nome + " " + periodoDidattico);
-
-				// Crea un nuovo JAVA Bean Corso
-				// Aggiungi il nuovo oggetto Corso alla lista corsi
-			}
-
-			conn.close();
-			
-		} catch (SQLException e) {
-			// e.printStackTrace();
-			throw new RuntimeException("Errore Db", e);
-		}
-		
-		return res;
-	}*/
-
-	/*
-	 * Ottengo tutti gli studenti iscritti al Corso
-	 */
 	public List<Studente> getStudentiIscrittiAlCorso(Corso corso) {
 		
 		final String sql = "SELECT * "
@@ -142,10 +97,8 @@ public class CorsoDAO {
 
 			ResultSet rs = st.executeQuery();		
 
-
 			while (rs.next()) {
 
-				//Integer matricola = rs.getInt("matricola");
 				String cognome = rs.getString("cognome");
 				String nome = rs.getString("nome");
 				String CDS = rs.getString("CDS");
@@ -158,14 +111,10 @@ public class CorsoDAO {
 			
 
 		} catch (SQLException e) {
-			// e.printStackTrace();
 			throw new RuntimeException("Errore Db", e);
 		}
 	}
 
-	/*
-	 * Data una matricola ed il codice insegnamento, iscrivi lo studente al corso.
-	 */
 	public void iscriviStudenteACorso(Integer matricola, Corso corso) {
 
 		final String sql = "INSERT INTO iscrizione (matricola, codins) "
@@ -185,7 +134,6 @@ public class CorsoDAO {
 			conn.close();			
 
 		} catch (SQLException e) {
-			// e.printStackTrace();
 			throw new RuntimeException("Errore Db", e);
 		}
 		
